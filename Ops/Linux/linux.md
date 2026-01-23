@@ -351,3 +351,16 @@ npm config set https-proxy http://proxy.company.com:8080
 sudo du -sh /path/to/large/file/* | sort -rh | head -n 10
 ```
 
+### 修改默认shell为zsh
+
+#### CentOS
+
+```bash
+dnf install util-linux-user
+chsh -s $(which zsh)
+```
+```bash
+vi /etc/default/useradd
+SHELL=/usr/bin/zsh
+```
+
