@@ -1,0 +1,7 @@
+- 关闭Steam更新
+- 开启Steam
+- WIN + R 后，输入`steam://nav/console`, 回车
+- 输入 `download_depot <AppID> <DepotsID> <ManifestID>`
+- 进入 `https://steamdb.info/` 输入游戏英文名，查找各种ID
+- 找齐以后，在Steam输入 `download_depot aaa bbb ccc` 回车
+- 下载完成后，把已更新的游戏放到一个新目录，把下载的游戏放到Steam在这款游戏的目录中
