@@ -25,7 +25,7 @@
   - `Alt + 方向键` 分屏切换
   - `Alt + Shift + 方向键` 调整分屏大小
 - 快速切换桌面
-  - win + ctrl + d 新建桌面
-  - win + ctrl + <- / -> 切换桌面
-  - win + ctrl + F4 关闭当前桌面
-  - win + tab 快速切换桌面 / 窗口
+  - `win + ctrl + d` 新建桌面
+  - `win + ctrl + <- / ->` 切换桌面
+  - `win + ctrl + F4` 关闭当前桌面
+  - `win + tab` 快速切换桌面 / 窗口
