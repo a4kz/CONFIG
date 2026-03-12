@@ -85,17 +85,10 @@ vi ~/.docker/config.json
 ```
 
 ```
-{
- "proxies":
- {
-   "default":
-   {
-     "httpProxy": "http://127.0.0.1:3001",
-     "httpsProxy": "http://127.0.0.1:3001",
-     "noProxy": "*.test.example.com,.example2.com,127.0.0.0/8"
-   }
- }
-}
+[Service]
+Environment="HTTP_PROXY=http://proxy.example.com:80/"
+Environment="HTTPS_PROXY=http://proxy.example.com:80/"
+Environment="NO_PROXY=localhost,127.0.0.0/8,docker-registry.somecorporation.com"
 ```
 
 ### centOS
