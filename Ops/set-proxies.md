@@ -80,10 +80,14 @@ yarn config set proxy http;//proxy:port
 
 ### docker
 
-```
-vi ~/.docker/config.json
-```
 
+```
+ mkdir /etc/systemd/system/docker.service.d
+
+```
+```bash
+vi /etc/systemd/system/docker.service.d/http-proxy.conf 
+```
 ```
 [Service]
 Environment="HTTP_PROXY=http://proxy.example.com:80/"
