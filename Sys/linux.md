@@ -8,8 +8,6 @@ apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-
-
 __如果系统时间不正确，那么 apt 将无法更新__
 
 ### Debian设置系统级别的代理：[参考文章](https://computingforgeeks.com/how-to-set-system-proxy-on-debian-linux/)
@@ -32,6 +30,7 @@ chmod +x /etc/profile.d/proxy.sh
 ```
 logout
 ```
+
 ### debian 12 sources.list: /etc/apt/sources.list
 
 ```
@@ -51,16 +50,16 @@ deb https://security.debian.org/debian-security/ bookworm-security contrib main 
 # deb-src https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware
 ```
 
-
 #### 确认查看代理是否起作用
+
 ```
 env | grep -i proxy
 ```
 
-
 ```
 apt update
 ```
+
 ```
 apt install zsh
 ```
@@ -80,26 +79,31 @@ omz update
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/zsh-autosuggestions
 ```
+
 ```
 vi ~/.zshrc
 ```
-
 
 ```
 ZSH_THEME="mortalscumbag"
 ```
 
 #### 写到 `~/.zshrc`
+
 ```
 source ~/.oh-my-zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
+
 ```
 source /etc/profile.d/proxy.sh
 ```
+
 #### 退出 `~/.zshrc`后
+
 ```
 source ~/.zshrc
 ```
+
 ### Debian / Ubuntu修改主机名
 
 ```
@@ -146,6 +150,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 mkdir /etc/systemd/system/docker.service.d
 ```
+
 #### 创建文件 `/etc/systemd/system/docker.service.d/http-proxy.conf `
 
 ```
@@ -154,6 +159,7 @@ Environment="HTTP_PROXY=http://proxy.example.com:80/"
 Environment="HTTPS_PROXY=http://proxy.example.com:80/"
 Environment="NO_PROXY=localhost,127.0.0.0/8,docker-registry.somecorporation.com"
 ```
+
 ```
 systemctl daemon-reload
 ```
@@ -168,8 +174,8 @@ systemctl restart docker
 export http_proxy="http://a.b.c.d:e/"
 ```
 
-
 ### 修改为指定时间, DietPi不修改apt无法更新
+
 ```
 date -s  "YYYY/MM/DD hh:mm:ss"
 
@@ -185,9 +191,6 @@ timedatectl list-timezones | grep AAA
 timedatectl set-timezone Asia/Shanghai
 ```
 
-
-
-
 ### CasaOS
 
 ```
@@ -197,12 +200,12 @@ wget -qO- https://get.casaos.io | bash
 ```
 casaos-uninstall
 ```
+
 #### update
+
 ```
 curl -fsSL https://get.casaos.io/update |  bash
 ```
-
-
 
 ### Debian ipv4 自动消失问题的解决
 
@@ -239,6 +242,7 @@ proxy=http://a.b.c.d:e/
 proxy_username=ffff
 proxy_password=gggg
 ```
+
 ```
 # user level
 # .bash_profile
@@ -248,13 +252,14 @@ export https_proxy=Http://a.b.c.d:e/
 
 export http_proxy=http://username:password@a.b.c.d:e/
 ```
+
 ### Kali enable ssh
+
 ```
 # /etc/ssh/sshd_config
 
 PermitRootLogin yes
 ```
-
 
 ### dietpi
 
@@ -267,19 +272,20 @@ epxort https_proxy="http://a.b.c.d:e/"
 ```
 
 ```
-# .bashrc	中设置时间 ???
+# .bashrc    中设置时间 ???
 export TZ="AAA/BBB"
 ```
 
 ### PVE
+
 #### /etc/default/grub
+
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 ```
 
-
-
 #### 安装 istoreos
+
 - 上传 img
 
 - 创建虚拟机
@@ -297,11 +303,11 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 - 网络：VirtIO
 
 - 启动后输入
-
+  
   ```
   qm importdisk [istore-id] /var/lib/vz/template/iso/iStoreOS.img local-lvm
   ```
-  
+
 - 硬件 -> 点开 未使用的磁盘 -> 添加
 
 - 选项 -> 引导顺序 -> 只对 scsi0 打勾
@@ -334,13 +340,14 @@ sudo networksetup -setv6automatic Ethernet
 
 #### npm proxy
 
-
 ##### For HTTP:
+
 ```
 npm config set proxy http://proxy_host:port
 ```
 
 ##### For HTTPS:
+
 ```
 npm config set https-proxy http://proxy.company.com:8080
 ```
@@ -359,8 +366,8 @@ sudo du -sh /path/to/large/file/* | sort -rh | head -n 10
 dnf install util-linux-user
 chsh -s $(which zsh)
 ```
+
 ```bash
 vi /etc/default/useradd
 SHELL=/usr/bin/zsh
 ```
-

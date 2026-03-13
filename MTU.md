@@ -1,7 +1,5 @@
 # MTU
 
 ```bash
-
 sudo ip link set dev eth0 mtu 1400
-
 ```

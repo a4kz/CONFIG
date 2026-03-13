@@ -7,18 +7,21 @@ set HTTP_PROXY=http://user:password@proxy.domain.com:port
 ```
 
 #### cmder
+
 ```
 Set http_proxy=http://[proxy]:[port]
 Set https_proxy=http://[proxy]:[port]
 ```
 
 #### bash
+
 ```
 export http_proxy=http://[proxy]:[port]
 export https_proxy=http://[proxy]:[port]
 ```
 
 #### Powershell
+
 ```
 $env:http_proxy=http://[proxy]:[port]
 $env:https_proxy=http://[proxy]:[port]
@@ -35,6 +38,7 @@ git config --global http.proxy http://proxy:port
 ```
 npm config set proxy http://proxy:port
 ```
+
 ```
 // 代理如果不起作用
 // Cache data in your computer is broken. Try this:
@@ -45,6 +49,7 @@ npm cache clean --force
 npm config delete proxy
 npm config delete https-proxy
 ```
+
 ```
 // 查看某个package的所有版本
 npm view joi versions
@@ -52,8 +57,6 @@ npm view joi versions --json
 ```
 
 ```
-
-
 For some weird reasons, none of these answers helped me. I discovered it was an issue with my proxy. I solved it following these steps:
 
 npm cache clean --force
@@ -67,10 +70,7 @@ npm cache verify
 Delete the node_modules folder and run
 
 npm install
-
 ```
-
-
 
 ## yarn
 
@@ -80,14 +80,14 @@ yarn config set proxy http;//proxy:port
 
 ### docker
 
-
 ```
  mkdir /etc/systemd/system/docker.service.d
-
 ```
+
 ```bash
 vi /etc/systemd/system/docker.service.d/http-proxy.conf 
 ```
+
 ```
 [Service]
 Environment="HTTP_PROXY=http://proxy.example.com:80/"
@@ -182,4 +182,3 @@ http_proxy = http://10.10.1.10:8080/
 https_proxy = http://10.10.1.10:8080/ 
 ftp_proxy = http://10.10.1.10:8080/ 
 ```
-
