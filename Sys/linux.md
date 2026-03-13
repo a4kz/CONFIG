@@ -182,7 +182,7 @@ __其他修改时间方法__
 timedatectl
 timedatectl list-timezones
 timedatectl list-timezones | grep AAA
-timedatectl set-timezone AAA/XYZ
+timedatectl set-timezone Asia/Shanghai
 ```
 
 
