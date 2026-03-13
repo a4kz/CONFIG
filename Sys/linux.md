@@ -128,7 +128,7 @@ sudo sysctl -p
 # /etc/ssh/sshd_config
 
 PermitRootLogin yes
-PasswordAuthentication yes
+# PasswordAuthentication yes
 ```
 
 ```
